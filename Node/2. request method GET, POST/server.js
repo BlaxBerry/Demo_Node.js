@@ -5,6 +5,7 @@ app.on('request', (req, res) => {
 
     console.log(req.method);
 
+
     res.end(`request method is : ${req.method}`)
 });
 
