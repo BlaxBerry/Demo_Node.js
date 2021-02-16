@@ -6,6 +6,7 @@ app.on('request', (req, res) => {
         'content-type': 'text/html;charset=utf8'
     });
 
+    // 通过ul
     if (req.url == '/index' | req.url == '/') {
         res.end(`<h2>Welcome to <h1>Homepage</h1></h2>`)
     } else if (req.url == '/about') {
