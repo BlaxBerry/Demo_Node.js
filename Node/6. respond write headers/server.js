@@ -20,9 +20,12 @@ app.on('request', (req, res) => {
     // text/css
     // image/jpeg
     // application/json
+
+    // 如下: 400的状态码,纯文本内容类型
     // res.writeHead(400, {
     //     'content-type': 'text/plain'
     // });
+
     res.writeHead(200, {
         'content-type': 'text/html;charset=utf8'
     });
