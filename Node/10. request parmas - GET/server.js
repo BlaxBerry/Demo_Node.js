@@ -6,7 +6,7 @@ const url = require('url');
 const app = http.createServer();
 app.on('request', (req, res) => {
 
-    // url.parse() 把字符串的url换为对象
+    // url.parse() 把req.url获得的 字符串的url地址 换为 对象形式
     // url.parse(req.url);
     res.end(`${url.parse(req.url)}`)
 
