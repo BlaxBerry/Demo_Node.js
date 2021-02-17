@@ -1,3 +1,8 @@
+访问不同地址返回不同网页
+
+就是判断客户端请求地址 和 服务端响应文件 
+
+``` js
 const http = require('http');
 const url = require('url');
 
