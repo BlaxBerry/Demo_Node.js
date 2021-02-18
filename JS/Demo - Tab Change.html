@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        .nav {
+            padding: 100px 100px 34px;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+            padding: 5px 30px;
+            background-color: crimson;
+            opacity: 0.9;
+            color: white;
+            font-weight: 700;
+        }
+        
+        .content {
+            margin-left: 100px;
+        }
+        
+        .content div {
+            display: none;
+            width: 340px;
+            height: 100px;
+            background-color: wheat;
+            font-weight: 700;
+            padding: 50px;
+        }
+        
+        .bgc {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="nav ">
+        <li class="bgc">选项一</li>
+        <li>选项二</li>
+        <li>选项三</li>
+        <li>选项四</li>
+    </ul>
+    <div class="content">
+        <div style="display: block;">选项一 的内容</div>
+        <div>选项二 的内容</div>
+        <div>选项三 的内容</div>
+        <div>选项四 的内容</div>
+    </div>
+    <script>
+        $(function() {
+            $(".nav li").click(function() {
+                console.log($(this).css("opacity"));
+                $(this).addClass("bgc").siblings().removeClass("bgc");
+
+                var index = $(this).index();
+                $(".content div").eq(index).show().siblings().hide();
+            });
+        });
+    </script>
+</body>
+
+</html>
