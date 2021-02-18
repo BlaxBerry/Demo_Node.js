@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <style>
+        ul {
+            margin: 100px;
+            height: 306px;
+            width: 310px;
+        }
+        
+        li {
+            list-style: none;
+            float: left;
+            height: 100px;
+            width: 100px;
+            background-color: crimson;
+            border: 1px solid white;
+        }
+        
+        li:nth-child(2n) {
+            background-color: teal;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <script>
+        $(function() {
+            $("li").hover(function() {
+                $(this).stop().fadeTo(300, 0.5);
+            }, function() {
+                $(this).stop().fadeTo(300, 1)
+            });
+        });
+    </script>
+</body>
+
+
+</html>
