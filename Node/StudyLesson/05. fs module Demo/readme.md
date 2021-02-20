@@ -26,6 +26,7 @@ fs.stat('./upload', (err, data) => {
 
 })
 ```
+---
 ```js
 const fs = require('fs');
 
@@ -74,4 +75,4 @@ fs.stat('./upload', (err, data) => {
 
 
 ## 目录 放入 数组
-1. 找出public目录下的所有目录，然后存入一个数组
+1. 找出public目录下的所有目录，然后存入一个数组(仅文件夹，不要文件)
