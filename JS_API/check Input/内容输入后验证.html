@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>密码强度验证</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        form {
+            width: 300px;
+            padding: 20px;
+            border: 3px solid gray;
+            margin: 100px auto;
+            border-radius: 10px;
+        }
+        
+        form label {
+            position: relative;
+            display: block;
+            padding: 10px;
+            padding-bottom: 30px;
+            background-color: grey;
+        }
+        
+        form label span {
+            position: absolute;
+            left: 10px;
+            bottom: 5px;
+            font-size: 12px;
+            color: white;
+            width: 100%;
+            text-align: center;
+            display: none;
+        }
+        
+        form input {
+            outline: none;
+            border: none;
+        }
+        
+        @font-face {
+            font-family: 'iconfont';
+            src: url('//at.alicdn.com/t/font_2383639_md0ltsigiq.eot');
+            src: url('//at.alicdn.com/t/font_2383639_md0ltsigiq.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_2383639_md0ltsigiq.woff2') format('woff2'), url('//at.alicdn.com/t/font_2383639_md0ltsigiq.woff') format('woff'), url('//at.alicdn.com/t/font_2383639_md0ltsigiq.ttf') format('truetype'), url('//at.alicdn.com/t/font_2383639_md0ltsigiq.svg#iconfont') format('svg');
+        }
+        
+        form label i {
+            position: absolute;
+            left: 240px;
+            width: 30px;
+            height: 30px;
+            font-style: normal;
+            font-family: 'iconfont';
+        }
+        
+        form>label>i.icon-error {
+            color: red;
+        }
+        
+        form>label>i.icon-succeed {
+            color: green;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <label>
+            name: <input type="text">
+            <i></i>
+            <span>only a~z A-Z 0~9 or underline</span>
+        </label>
+    </form>
+
+    <script>
+        const reg = /^[0-9a-zA-Z]\w{5,11}$/;
+
+        const inp = document.querySelector('input');
+        const i = document.querySelector('i');
+        const span = document.querySelector('span');
+
+        let timer = 0;
+        inp.addEventListener('input', function() {
+            clearTimeout(timer);
+            timer = setTimeout(() => {
+                if (reg.test(this.value)) {
+                    i.classList.add('icon-succeed');
+                    i.classList.remove('icon-error');
+                    i.innerHTML = '&#xe636;'
+                    span.style.display = 'none'
+                } else {
+                    i.classList.add('icon-error');
+                    i.classList.remove('icon-succeed');
+                    i.innerHTML = '&#xe660;';
+                    span.style.display = 'block';
+                }
+            }, 300)
+        })
+    </script>
+</body>
+
+</html>

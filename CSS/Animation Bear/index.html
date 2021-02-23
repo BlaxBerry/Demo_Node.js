@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction and Collection</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <style>
+        h1 {
+            text-align: center;
+            opacity: 0;
+        }
+        
+        .notice {
+            color: crimson;
+            opacity: 1;
+            font-size: 40px;
+        }
+        /* bear */
+        
+        .bear {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 100px;
+            width: 200px;
+            background: url(./image/bear.png) no-repeat;
+            animation: bear 1s steps(8) infinite, bearMove 4s linear forwards;
+        }
+        
+        @keyframes bear {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1600px;
+            }
+        }
+        
+        @keyframes bearMove {
+            0% {
+                left: 0;
+            }
+            100% {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
+        .mountain {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 336px;
+            width: 100%;
+            background: url(./image/bg1.png);
+            animation: gbMove 25s linear infinite;
+        }
+        
+        .bg {
+            background: url(./image/bg2.png);
+            height: 569px;
+            z-index: -1;
+            opacity: .8;
+        }
+        
+        @keyframes gbMove {
+            0% {
+                background-position-x: 0;
+            }
+            100% {
+                background-position-x: -3840px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CHEN | 練習や作品集</h1>
+
+    <!-- <div class="aboutMe">
+        <a href="">自己紹介</a>
+    </div> -->
+
+    <h1 class="notice">Not Ready Yet</h1><br>
+    <h1 class="notice">Comming Soon</h1>
+    <div class="mountain">
+        <div class="mountain bg"></div>
+        <div class="bear"></div>
+    </div>
+
+</body>
+
+</html>
